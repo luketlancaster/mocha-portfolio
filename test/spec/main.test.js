@@ -27,3 +27,12 @@ describe('getStock', function() {
     });
   });
 });
+
+describe('addStockToTable', function () {
+  it('should use info to append the table', function () {
+    var stock = { Name: 'SuperCorp', Symbol: 'SPCP', LastPrice: 2.33};
+    $('tr').length.should.equal(0);
+    addStockToTable(stock);
+    $('tr').length.should.equal(1);
+  });
+});
