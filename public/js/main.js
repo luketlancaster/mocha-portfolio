@@ -1,3 +1,6 @@
+/* jshint jquery: true */
+/* globals async: false */
+
 function hello() {
   return 'world';
 }
@@ -7,6 +10,7 @@ function addStockToTable(stock) {
 
   $row.append('<td>' + stock.Name + '</td>');
   $row.append('<td>' + stock.Symbol + '</td>');
+  $row.append('<td>' + stock.LastPrice + '</td>');
   $row.append('<td>' + stock.LastPrice + '</td>');
 
   $('tbody').append($row);
@@ -19,4 +23,17 @@ function getStock(symbol, cb) {
   $.get(url, function(res) {
     return cb(res);
   }, 'jsonp');
+}
+
+function getMultipleStocks(symbols, cb) {
+  async.map(symbols,
+    function(symbol, innercb) {
+      getStock(symbol, function(stock) {
+        innercb(null, stock);
+      });
+    },
+    function(err, stocks) {
+      cb(stocks);
+  }
+ );
 }
