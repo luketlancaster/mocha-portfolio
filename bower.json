@@ -1,0 +1,22 @@
+{
+  "name": "mocha-portfolio",
+  "version": "0.0.0",
+  "homepage": "https://github.com/luketlancaster/mocha-portfolio",
+  "authors": [
+    "Luke Lancaster <luketlancaster@gmail.com>"
+  ],
+  "description": "This app demonstrates testing with Mocha and Chai!",
+  "main": "public/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mocha": "~2.1.0",
+    "chai": "~1.10.0"
+  }
+}
