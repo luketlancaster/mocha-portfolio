@@ -13,6 +13,21 @@ describe('hello', function() {
   });
 });
 
+describe('total stocks', function() {
+  it('should return a sum of the LastPrices', function() {
+    var stocks1 = [
+                   { Symbol: 'AAPL', LastPrice: 12.33 },
+                   { Symbol: 'AMZN', LastPrice: 22.35 }
+                 ],
+        stocks2 = [
+                   { Symbol: 'MSFT', LastPrice: 0.10 },
+                   { Symbol: 'SBUX', LastPrice: 0.20 }
+                 ];
+    totalStocks(stocks1).should.be.closeTo(34.68, 0.01);
+    totalStocks(stocks2).should.be.closeTo(0.30, 0.01);
+  });
+});
+
 describe('DOM', function () {
   describe('table', function () {
     beforeEach(function() {
@@ -48,9 +63,9 @@ describe('DOM', function () {
     describe('refreshStockPrices', function () {
       it('should edit each stock in the table with the new price', function() {
         var stocks = [
-            { Symbol: 'AAPL', LastPrice: 12.33 },
-            { Symbol: 'AMZN', LastPrice: 22.35 }
-        ],
+                       { Symbol: 'AAPL', LastPrice: 12.33 },
+                       { Symbol: 'AMZN', LastPrice: 22.35 }
+                     ],
            $tbody  = $('tbody'),
            $trs;
 

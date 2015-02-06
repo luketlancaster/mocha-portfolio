@@ -48,3 +48,14 @@ function refreshStockPrices(stocks) {
   });
 }
 
+function totalStocks(stocks) {
+  return _.reduce(stocks, function(prev, curr) {
+    return prev + curr.LastPrice;
+  }, 0);
+  //My solution below. Works, but less elegant
+  //var price = 0;
+  //_.forEach(stocks, function (stock) {
+    //price += stock.LastPrice;
+  //});
+  //return Math.round(price * 100) / 100;
+};
