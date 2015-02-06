@@ -90,6 +90,8 @@ describe('DOM', function () {
 });
 
 describe('ASYNC', function () {
+  this.timeout(10 * 1000);
+
   describe('getMultipleStocks', function() {
     it('should return mulitple stock objects', function (done) {
       getMultipleStocks(['AAPL', 'AMZN'], function (stocks) {
