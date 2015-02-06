@@ -59,4 +59,21 @@ describe('getMultipleStocks', function() {
   });
 });
 
+describe('refreshStockPrices', function () {
+  it('should edit each stock in the table with the new price', function() {
+    var stocks = [
+        { Symbol: 'AAPL', LastPrice: 12.33 },
+        { Symbol: 'AMZN', LastPrice: 22.35 }
+    ],
+       $tbody  = $('tbody'),
+       $tr     = $('tr');
 
+    $('tbody').append('<tr>Apple Inc<td></td><td>AAPL</td><td>2.33</td><td>2.33</td></tr>');
+    $('tbody').append('<tr><td>Amazon.com Inc</td>AMZN<td></td>2.33<td></td><td>2.33</td></tr>');
+
+    refreshStockPrices(stocks);
+
+    $($($('tr')[0]).find('td')[3]).text().should.equal('12.33');
+    $($($('tr')[1]).find('td')[3]).text().should.equal('22.35');
+  });
+});
