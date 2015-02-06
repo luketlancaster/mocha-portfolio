@@ -19,13 +19,18 @@ describe('DOM', function () {
       $('tbody').empty();
     });
 
-
     describe('addStockToTable', function () {
       it('should add a row to the table', function () {
         var stock = { Name: 'SuperCorp', Symbol: 'SPCP', LastPrice: 2.33};
         $('tr').length.should.equal(0);
         addStockToTable(stock);
         $('tr').length.should.equal(1);
+      });
+      it('should ignore invalid stock tickers', function() {
+        var stock = { Message: 'No symbol matches found for XXXX.' };
+        $('tr').length.should.equal(0);
+        addStockToTable(stock);
+        $('tr').length.should.equal(0);
       });
       it('should use stock data in the appended row', function () {
         var stock = { Name: 'SuperCorp', Symbol: 'SPCP', LastPrice: 2.33},
@@ -39,7 +44,6 @@ describe('DOM', function () {
         $($tds[3]).text().should.equal('2.33');
       });
     });
-
 
     describe('refreshStockPrices', function () {
       it('should edit each stock in the table with the new price', function() {
@@ -86,6 +90,12 @@ describe('ASYNC', function () {
       getStock('AMZN', function(stock) {
         stock.Name.should.equal('Amazon.com Inc');
         done();
+      });
+    });
+    it('should return a message if no stock is found', function(done) {
+    getStock('XXXX', function (stock) {
+      stock.Message.should.exist();
+      done();
       });
     });
   });

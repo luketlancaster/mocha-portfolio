@@ -7,7 +7,9 @@ function hello() {
 
 function addStockToTable(stock) {
   var $row = $('<tr></tr>');
-
+  if(stock.Message) {
+    return;
+  }
   $row.append('<td>' + stock.Name + '</td>');
   $row.append('<td>' + stock.Symbol + '</td>');
   $row.append('<td>' + stock.LastPrice + '</td>');
