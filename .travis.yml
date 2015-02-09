@@ -1,7 +1,6 @@
 language: node_js
 node_js:
   - '0.10'
-
 before_install:
   - npm install -g npm
   - npm install -g bower
@@ -10,3 +9,6 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 script:
   - npm run test-once
+env:
+  global:
+    secure: NtyXr5T1jMzM3Du5vb9BCPO9Jq+f4KBbtrV62grSz4vNfYwDwafqSnr34N3oJ6ddbWxCsNKpMolsi4B02aSbW0SoxtI7W6H2xkmYhnu6/L/EvdDFkHdOk+gjSrnr5v53nc1nviwKrUhD8fucuxOT/yuXI4rBfaWGlOu/69DGr8E=
