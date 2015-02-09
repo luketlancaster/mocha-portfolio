@@ -4,30 +4,12 @@
 module.exports = function(config) {
 
   var sauceLaunchers = {
-    SL_IE7: {
+    SL_IE10: {
       base: 'SauceLabs',
-      platform: 'Windows XP',
-      browserName: 'Internet Explorer',
-      version: '7'
-    },
-    SL_IE9: {
-      base: 'SauceLabs',
-      platform: 'Windows XP',
-      browserName: 'Internet Explorer',
-      version: '9'
-    },
-    SL_Opera: {
-      base: 'SauceLabs',
-      platform: 'Windows XP',
-      browserName: 'Opera',
-      version: '12'
-    },
-    SL_Safari: {
-      base: 'SauceLabs',
-      platform: 'Yosemite',
-      browserName: 'Safari',
-      version: '8'
-   }
+      platform: 'Windows 7',
+      browserName: 'internet explorer',
+      version: '10.0'
+    }
   };
 
   config.set({
@@ -97,7 +79,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Firefox', 'SL_IE7', 'SL_IE9', 'SL_Opera', 'SL_Safari'],
+    browsers: ['PhantomJS', 'Firefox', 'SL_IE10'],
 
 
     // Continuous Integration mode
