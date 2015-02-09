@@ -10,5 +10,3 @@ This app demonstrates testing with Mocha and Chai!
 [![NPM Status](https://www.versioneye.com/user/projects/54d8df63c1bbbda013000036/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54d8df63c1bbbda013000036)
 
 [![Code Climate](https://codeclimate.com/github/luketlancaster/mocha-portfolio/badges/gpa.svg)](https://codeclimate.com/github/luketlancaster/mocha-portfolio)
-
-[![forthebadge](http://forthebadge.com/images/badges/built-by-codebabes.svg)](http://forthebadge.com)
